@@ -1,0 +1,153 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --softBlue: hsl(215, 51%, 70%);
+  --cyan: hsl(178, 100%, 50%);
+  --mainBG: hsl(217, 54%, 11%);
+  --cardBG: hsl(216, 50%, 16%);
+  --line: hsl(215, 32%, 27%);
+  --white: hsl(0, 0%, 100%);
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--mainBG);
+}
+
+.card-container {
+  background-color: var(--cardBG);
+  height: 610px;
+  width: 360px;
+  border-radius: 15px;
+}
+
+.content-wrapper {
+  padding: 20px;
+  font-weight: 300;
+}
+
+.img-container {
+  position: relative; /* for overlay */
+}
+
+.content-wrapper img {
+  width: 100%;
+  /* height: auto; */
+  border-radius: 15px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: var(--cyan);
+  border-radius: 15px;
+}
+
+.view {
+  opacity: 0;
+  transition: 0.5s ease;
+  position: absolute;
+  opacity: 0;
+  left: 43%;
+  top: 42%;
+}
+
+.img-container:hover .overlay,
+.view {
+  cursor: pointer;
+}
+
+.img-container:hover .overlay {
+  opacity: 0.5;
+}
+
+.img-container:hover .view {
+  opacity: 1;
+}
+
+h1 {
+  font-size: 20px;
+  color: var(--white);
+  margin: 20px 0px;
+}
+
+h1:hover,
+span:hover {
+  cursor: pointer;
+  color: var(--cyan);
+}
+
+.main-paragraph {
+  font-size: 18px;
+  padding-bottom: 20px;
+}
+
+span {
+  color: var(--white);
+}
+
+.main-paragraph,
+.createdby-container p,
+.days-left {
+  color: var(--softBlue);
+}
+
+.eth-container {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--softBlue);
+}
+
+.eth-balance,
+.days-left {
+  display: inline-block;
+}
+
+.eth-balance-container,
+.days-left-container {
+  display: flex;
+  align-items: center;
+}
+
+.eth-balance,
+.days-left {
+  padding-left: 7px;
+  font-size: 14px;
+}
+
+.eth-balance {
+  color: var(--cyan);
+}
+
+.createdby-container {
+  display: flex;
+  align-items: center;
+  padding-top: 17px;
+}
+
+.createdby-container img {
+  width: 40px;
+  border: 1px solid white;
+  border-radius: 50px;
+}
+
+.createdby-container p {
+  font-size: 14px;
+  padding-left: 15px;
+}
